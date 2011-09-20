@@ -56,3 +56,5 @@ All data provided copyright (c) 2008 MaxMind Inc.
 ## License 
 
 Released under an MIT license (see LICENSE.txt).
+
+Thanks to [hexorx](https://github.com/hexorx) for the countries gem that brought this idea about.
