@@ -1,0 +1,9 @@
+# encoding: UTF-8
+--- 
+port-aux-francais: 
+  city: port-aux-francais
+  accentcity: "Port-aux-Fran\xC3\xA7ais"
+  region: "00"
+  population: "45"
+  latitude: "-49.35"
+  longitude: "70.2166667"
