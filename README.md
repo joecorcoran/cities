@@ -12,7 +12,7 @@ The database is exhaustive and certainly stretches the definition of the word "c
 Countries are identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes.
 
     cities = City.cities_in_country("GB")
-      #=> { "abberley"=> #<City:0x000001049b9ba0>, "abberton"=> #<City:0x000001049b9b50> ... }
+      #=> { "abberley"=> #<City:0x000001049b9ba0>, "abberton"=> #<City:0x000001049b9b50>, ... }
 
     mcr = cities["manchester"]
       #=> #<City:0x00000102fb4ea8>
@@ -31,6 +31,17 @@ Countries are identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/w
 This gem was designed as an extension to the [countries gem](https://github.com/hexorx/countries).
 
     gem install countries
+
+Search for cities through a Country:
+
+    us = Country.search("US")
+      #=> #<Country:0x000001020cf5f0>
+
+    us.cities
+      #=> { "abanda" => #<City:0x00000114b34a38>, ...  }
+
+    us.cities.length
+      #=> 85964
 
 ## Data
 
