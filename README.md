@@ -1,4 +1,4 @@
-= cities
+# cities
 
 All the cities of the world (according to the periodically updated MaxMind.com database).
 
@@ -7,7 +7,7 @@ The database is exhaustive and certainly stretches the definition of the word "c
     City.cities_in_country("GB")["buchlyvie"].population
       #=> 448
 
-== Usage
+## Usage
 
 Countries are identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes.
 
@@ -26,13 +26,13 @@ Countries are identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/w
     mcr.latlong
       #=> [53,5, -2.216667]
 
-== countries gem
+## countries gem
 
 This gem was designed as an extension to the [countries gem](https://github.com/hexorx/countries).
 
     gem install countries
 
-== Data
+## Data
 
 There are over 2.7 million cities here, which makes for around 300MB.  The cities data is stored as YAML and _will_ be downloaded when you install this gem.
 
@@ -42,6 +42,6 @@ This product includes data created by MaxMind, available from http://www.maxmind
 
 All data provided copyright (c) 2008 MaxMind Inc.
 
-== License 
+## License 
 
 Released under an MIT license (see LICENSE.txt).
