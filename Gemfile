@@ -1,5 +1,7 @@
 source "http://rubygems.org"
 
+gem 'yajl-ruby', '~> 1.0.0'
+
 group :development, :test do
   gem 'jeweler',   '~> 1.6.4'
   gem 'rspec',     '~> 2.6.0'

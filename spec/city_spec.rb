@@ -67,7 +67,7 @@ describe City do
     let(:path) { City.path_for_country('US') }
 
     it 'returns string' do
-      path.should match /\/data\/cities\/US\.yaml/
+      path.should match /\/data\/cities\/US\.json/
     end
 
   end

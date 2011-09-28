@@ -1,6 +1,6 @@
 #$LOAD_PATH << File.expand_path(File.dirname(__FILE__))
 
-require 'YAML' unless defined?(YAML)
+require 'yajl' unless defined?(Yajl)
 
 require 'cities/city'
 

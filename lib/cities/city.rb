@@ -38,7 +38,7 @@ class City
   class << self
 
     def path_for_country(code)
-      File.join(File.dirname(__FILE__), '..', 'data', 'cities', "#{code}.yaml")
+      File.join(File.dirname(__FILE__), '..', 'data', 'cities', "#{code}.json")
     end
 
     def cities_in_country?(code)
@@ -47,7 +47,8 @@ class City
     
     def cities_in_country(code)
       if self.cities_in_country?(code)
-        hash, cities = YAML.load_file(self.path_for_country(code)), {}
+        parser = Yajl::Parser.new
+        hash, cities = parser.parse(File.new(self.path_for_country(code), "r")), {}
         hash.each{ |key, data| cities[key] = City.new(data) }
         cities
       else
