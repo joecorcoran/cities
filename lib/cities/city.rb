@@ -1,3 +1,5 @@
+require 'multi_json'
+
 class City
   
   def initialize(data)
@@ -5,17 +7,17 @@ class City
   end
 
   def name
-    @data["accentcity"]
+    @data['accentcity']
   end
 
   def latitude
-    return nil if @data["latitude"].nil?
-    @data["latitude"].to_f
+    return nil if @data['latitude'].nil?
+    @data['latitude'].to_f
   end
 
   def longitude
-    return nil if @data["longitude"].nil?
-    @data["longitude"].to_f
+    return nil if @data['longitude'].nil?
+    @data['longitude'].to_f
   end
 
   def latlong?
@@ -27,12 +29,12 @@ class City
   end
 
   def population
-    return nil if @data["population"].nil?
-    @data["population"].to_i
+    return nil if @data['population'].nil?
+    @data['population'].to_i
   end
 
   def region
-    @data["region"]
+    @data['region']
   end
 
   class << self
@@ -47,15 +49,17 @@ class City
     
     def cities_in_country(code)
       if self.cities_in_country?(code)
-        parser = Yajl::Parser.new
-        hash, cities = parser.parse(File.new(self.path_for_country(code), "r")), {}
-        hash.each{ |key, data| cities[key] = City.new(data) }
-        cities
+        json = File.read(path_for_country(code))
+        country_data = MultiJson.load(json)
+        country_data.reduce({}) do |cities, city_data|
+          cities[city_data.first] = City.new(city_data.last)
+          cities
+        end
       else
         {}
       end
     end
 
   end
-
+  
 end

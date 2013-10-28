@@ -1,9 +1,7 @@
-# encoding: utf-8
-
+require 'spec_helper'
 require 'countries'
-require 'cities'
 
-describe Country do
+describe ISO3166::Country do
   
   it 'should return correct hash of hashed cities' do
     ISO3166::Country.search('WF').cities.should have(39).cities
