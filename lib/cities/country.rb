@@ -1,13 +1,15 @@
-module ISO3166; end
+module ISO3166
 
-class ISO3166::Country
+  class Country
 
-  def cities
-    City.cities_in_country(alpha2)
-  end
+    def cities
+      City.cities_in_country(alpha2)
+    end
 
-  def cities?
-    City.cities_in_country?(alpha2)
+    def cities?
+      City.cities_in_country?(alpha2)
+    end
+
   end
 
 end
