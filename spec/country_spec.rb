@@ -2,14 +2,12 @@ require 'spec_helper'
 require 'countries'
 
 describe ISO3166::Country do
-  
-  it 'should return correct hash of hashed cities' do
-    ISO3166::Country.search('WF').cities.should have(39).cities
+  it 'should return correct number of cities' do
+    expect(ISO3166::Country.search('WF').cities.length).to eq(39)
   end
 
-  it 'should return empty hash for country with no cities' do
-    ISO3166::Country.search('VA').cities.should have(0).cities
+  it 'should be empty hash for country with no cities' do
+    expect(ISO3166::Country.search('VA').cities).to eq({})
   end
-
 end
 
