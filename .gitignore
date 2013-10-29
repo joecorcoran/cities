@@ -49,3 +49,4 @@ pkg
 #*.rbc
 .ruby-gemset
 .ruby-version
+data/

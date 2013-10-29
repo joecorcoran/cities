@@ -20,6 +20,6 @@ txt
   s.add_development_dependency 'countries',   '~> 0.9.3'
   s.add_development_dependency 'rake'
 
-  s.files        = Dir['lib/**/*.{rb,json}'] + ['README.md', 'LICENSE.txt']
+  s.files        = Dir['lib/**/*.rb'] + ['README.md', 'LICENSE.txt']
   s.require_path = 'lib'
 end

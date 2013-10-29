@@ -39,12 +39,10 @@ class City
 
   class << self
 
-    def path_for_country(code)
-      File.join(File.dirname(__FILE__), '..', 'data', 'cities', "#{code}.json")
-    end
+    attr_accessor :data_path
 
     def cities_in_country?(code)
-      File.exist?(self.path_for_country(code))
+      File.exist?(path_for_country(code))
     end
     
     def cities_in_country(code)
@@ -60,6 +58,17 @@ class City
       end
     end
 
+    private
+
+      def has_data?
+        data_path && Dir.exists?(data_path)
+      end
+
+      def path_for_country(code)
+        raise unless has_data?
+        File.join(data_path, "#{code}.json")
+      end
+
   end
-  
+
 end
