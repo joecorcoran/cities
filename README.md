@@ -1,6 +1,6 @@
 # Cities
 
-All the cities of the world (according to the periodically updated MaxMind.com database).
+All the cities of the world (according to the periodically updated MaxMind database).
 
 ## Data
 
@@ -16,6 +16,8 @@ $ tar -zxvf cities.tar.gz
 ```ruby
 City.data_path = '/path/to/cities'
 ```
+
+All data copyright &copy; 2008 MaxMind Inc.
 
 ## Usage
 
@@ -66,12 +68,12 @@ us.cities.length
   #=> 85964
 ```
 
-This product includes data created by MaxMind, available from http://www.maxmind.com
-
-All data provided copyright (c) 2008 MaxMind Inc.
-
 ## License 
 
-Released under an MIT license (see LICENSE.txt).
+Released under an MIT license.
 
-Thanks to [hexorx](https://github.com/hexorx) for the countries gem that brought this idea about.
+## Credits
+
+Made by [Joe Corcoran](http://blog.joecorcoran.co.uk). Thanks to [hexorx](https://github.com/hexorx) for the countries gem that brought this idea about.
+
+*This product includes data created by MaxMind, available from [http://www.maxmind.com](http://www.maxmind.com)*
