@@ -66,4 +66,4 @@ us.cities
 
 Provided under an MIT license by [Joe Corcoran](http://blog.joecorcoran.co.uk). Thanks to [hexorx](https://github.com/hexorx) for the countries gem that brought this idea about.
 
-This product includes data created by MaxMind, available from [http://www.maxmind.com](http://www.maxmind.com). All data copyright &copy; 2008 MaxMind Inc. Read the [MaxMind WorldCities open data license](http://download.maxmind.com/download/geoip/database/LICENSE_WC.txt) for more details.
+This product includes data created by MaxMind, available from [http://www.maxmind.com](http://www.maxmind.com). All data &copy; 2008 MaxMind Inc. Read the [MaxMind WorldCities open data license](http://download.maxmind.com/download/geoip/database/LICENSE_WC.txt) for more details.
