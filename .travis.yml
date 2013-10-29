@@ -1,0 +1,14 @@
+language: ruby
+
+rvm:
+  - 1.9.3
+  - 2.0.0
+  - rbx-19mode
+  - jruby-19mode
+
+before_script:
+  - "wget https://s3-us-west-2.amazonaws.com/cities-gem/cities.tar.gz"
+  - "mkdir data"
+  - "tar -xzf cities.tar.gz -C data"
+
+script: "DATA_PATH=./data/cities rake"
