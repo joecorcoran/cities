@@ -1,5 +1,7 @@
 # Cities
 
+[![Build Status](https://travis-ci.org/joecorcoran/cities.png?branch=master)](https://travis-ci.org/joecorcoran/cities) [![Code Climate](https://codeclimate.com/github/joecorcoran/cities.png)](https://codeclimate.com/github/joecorcoran/cities)
+
 All the cities of the world (according to the periodically updated MaxMind database).
 
 ## Data
