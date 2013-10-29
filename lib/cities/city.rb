@@ -65,10 +65,16 @@ class City
       end
 
       def path_for_country(code)
-        raise unless has_data?
+        raise DataNotFound.new unless has_data?
         File.join(data_path, "#{code}.json")
       end
 
+  end
+
+  class DataNotFound < StandardError
+    def message
+      'JSON data not found. See README.md for installation instructions.'
+    end
   end
 
 end
