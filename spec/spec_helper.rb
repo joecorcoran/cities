@@ -6,6 +6,6 @@ RSpec.configure do |config|
   config.order = 'random'
   config.formatter = :progress
   config.before(:all) do
-    City.data_path = File.expand_path('../../data', __FILE__)
+    City.data_path = ENV['DATA_PATH'] || File.expand_path('../../data/cities', __FILE__)
   end
 end
