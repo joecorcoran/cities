@@ -10,7 +10,7 @@ Download it, extract it and connect it up as follows.
 
 ```
 $ wget https://s3-us-west-2.amazonaws.com/cities-gem/cities.tar.gz
-$ tar -zxvf cities.tar.gz
+$ tar -xzf cities.tar.gz
 ```
 
 ```ruby
