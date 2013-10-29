@@ -24,10 +24,10 @@ All data copyright &copy; 2008 MaxMind Inc.
 Countries are identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes.
 
 ```ruby
-cities = City.cities_in_country("GB")
+cities = City.cities_in_country('GB')
   #=> { "abberley"=> #<City:0x000001049b9ba0>, "abberton"=> #<City:0x000001049b9b50>, ... }
 
-mcr = cities["manchester"]
+mcr = cities['manchester']
   #=> #<City:0x00000102fb4ea8>
 
 mcr.name
@@ -43,7 +43,7 @@ mcr.latlong
 The database is exhaustive and certainly stretches the definition of the word "city".
 
 ```ruby
-City.cities_in_country("GB")["buchlyvie"].population
+City.cities_in_country('GB')['buchlyvie'].population
   #=> 448
 ```
 
@@ -58,7 +58,7 @@ $ gem install countries
 Search for cities through a Country:
 
 ```ruby
-us = Country.search("US")
+us = Country.search('US')
   #=> #<Country:0x000001020cf5f0>
 
 us.cities
