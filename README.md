@@ -16,7 +16,7 @@ $ tar -xzf cities.tar.gz
 ```
 
 ```ruby
-City.data_path = '/path/to/cities'
+Cities.data_path = '/path/to/cities'
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ City.data_path = '/path/to/cities'
 Countries are identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes.
 
 ```ruby
-cities = City.cities_in_country('GB')
+cities = Cities.cities_in_country('GB')
   #=> { "abberley"=> #<City:0x000001049b9ba0>, "abberton"=> #<City:0x000001049b9b50>, ... }
 
 mcr = cities['manchester']
@@ -43,7 +43,7 @@ mcr.latlong
 The database is exhaustive and certainly stretches the definition of the word "city".
 
 ```ruby
-City.cities_in_country('GB')['buchlyvie'].population
+Cities.cities_in_country('GB')['buchlyvie'].population
   #=> 448
 ```
 
