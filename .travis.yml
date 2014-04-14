@@ -2,9 +2,8 @@ language: ruby
 
 rvm:
   - 1.9.3
-  - 2.0.0
   - 2.1.1
-  - rbx-19mode
+  - rbx
   - jruby-19mode
 
 before_script:
@@ -13,3 +12,7 @@ before_script:
   - "tar -xzf cities.tar.gz -C data"
 
 script: "DATA_PATH=./data/cities rake"
+
+matrix:
+  allow_failures:
+    - rvm: rbx
