@@ -59,7 +59,7 @@ us.cities?
   #=> true
 
 us.cities
-  #=> { "abanda" => #<City:0x00000114b34a38>, ...  }
+  #=> { "abanda" => #<Cities::City:0x00000114b34a38>, ...  }
 ```
 
 ## Credits
