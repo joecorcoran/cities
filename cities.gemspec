@@ -14,10 +14,10 @@ Gem::Specification.new do |s|
 Provides data about world cities in Ruby. Data from the Maxmind database. 
 txt
 
-  s.add_dependency             'multi_json',  '~> 1.8.2'
+  s.add_dependency             'multi_json',  '~> 1.8'
 
-  s.add_development_dependency 'rspec',       '~> 2.14.1'
-  s.add_development_dependency 'countries',   '~> 0.9.3'
+  s.add_development_dependency 'rspec',       '~> 2.14'
+  s.add_development_dependency 'countries',   '~> 0.9'
   s.add_development_dependency 'rake'
 
   s.files        = Dir['lib/**/*.rb'] + ['README.md', 'LICENSE.txt']
