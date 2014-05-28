@@ -3,7 +3,7 @@ language: ruby
 rvm:
   - 1.9.3
   - 2.1.1
-  - rbx
+  - rbx-2
   - jruby-19mode
 
 before_script:
@@ -15,4 +15,4 @@ script: "DATA_PATH=./data/cities rake"
 
 matrix:
   allow_failures:
-    - rvm: rbx
+    - rvm: rbx-2
