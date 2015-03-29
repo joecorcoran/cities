@@ -4,7 +4,7 @@ describe Cities::City do
 
   context 'toronto' do
     subject(:toronto) { Cities.cities_in_country('CA')['toronto'] }
-    it      { to be_a Cities::City }
+    it      { expect(toronto).to be_a Cities::City }
     specify { toronto.name.should eql 'Toronto' }
     specify { toronto.latitude.should be_a Float }
     specify { toronto.longitude.should be_a Float }

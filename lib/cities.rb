@@ -1,19 +1,19 @@
 require 'multi_json'
+require 'cities/configuration'
 require 'cities/city'
 require 'cities/country'
 
 module Cities
   class << self
-    attr_accessor :data_path
+    @@cached_data = {}
 
     def cities_in_country?(code)
       File.exist?(path_for_country(code))
     end
-    
+
     def cities_in_country(code)
       if self.cities_in_country?(code)
-        json = File.read(path_for_country(code))
-        country_data = MultiJson.load(json)
+        country_data = load_country_data(code)
         country_data.reduce({}) do |cities, city_data|
           cities[city_data.first] = City.new(city_data.last)
           cities
@@ -24,6 +24,23 @@ module Cities
     end
 
     private
+    # This will not only load country data from a given country code
+    # but it will also cache if cache_data is set to true
+    def load_country_data(code)
+      if cache_data?
+        return @@cached_data[code] if @@cached_data[code]
+      end
+
+      json = File.read(path_for_country(code))
+      country_data = MultiJson.load(json)
+
+      if cache_data?
+        @@cached_data[code] = country_data
+      end
+
+      country_data
+    end
+
     def has_data?
       data_path && Dir.exists?(data_path)
     end
