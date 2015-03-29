@@ -62,6 +62,22 @@ us.cities
   #=> { "abanda" => #<Cities::City:0x00000114b34a38>, ...  }
 ```
 
+## Specs
+
+The default path for data is the following path
+
+```
+GEM_ROOT/data/cities
+```
+
+Or you can set the environment variable DATA_PATH
+
+To run the specs bundle and run specs
+```
+=> bundle
+=> rake
+```
+
 ## Credits
 
 Provided under an MIT license by [Joe Corcoran](http://blog.joecorcoran.co.uk). Thanks to [hexorx](https://github.com/hexorx) for the countries gem that brought this idea about.
