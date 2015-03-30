@@ -62,6 +62,39 @@ us.cities
   #=> { "abanda" => #<Cities::City:0x00000114b34a38>, ...  }
 ```
 
+## Caching
+
+Sometimes you may want to not constantly want to read and parse the same large JSON data files.  So by default we cache in memory the parsed JSON.  To turn this off simply set the cache_data flag to false
+
+```ruby
+Country.cache_data = false
+```
+
+## Configuration options available are data_path and cache_data
+
+```ruby
+Country.configure do |config|
+  config.data_path = '../data/cities'
+  config.cache_data = false
+end
+```
+
+## Specs
+
+The default path for data is the following path
+
+```
+GEM_ROOT/data/cities
+```
+
+Or you can set the environment variable DATA_PATH
+
+To run the specs bundle and run specs
+```
+=> bundle
+=> rake
+```
+
 ## Credits
 
 Provided under an MIT license by [Joe Corcoran](http://blog.joecorcoran.co.uk). Thanks to [hexorx](https://github.com/hexorx) for the countries gem that brought this idea about.

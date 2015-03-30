@@ -4,7 +4,7 @@ describe Cities::City do
 
   context 'toronto' do
     subject(:toronto) { Cities.cities_in_country('CA')['toronto'] }
-    it      { should be_a Cities::City }
+    it      { expect(toronto).to be_a Cities::City }
     specify { toronto.name.should eql 'Toronto' }
     specify { toronto.latitude.should be_a Float }
     specify { toronto.longitude.should be_a Float }
@@ -12,7 +12,7 @@ describe Cities::City do
     specify { toronto.population.should be_an Integer }
     specify { toronto.region.should be_a String }
   end
-  
+
   context 'dvadtsat' do
     subject(:dvadtsat) do
       Cities.cities_in_country('TJ')["22 (dvadtsat' vtorogo) parts''yezd"]
@@ -32,11 +32,11 @@ describe Cities::City do
 
   describe '::cities_in_country?' do
     it 'returns true for country with cities file' do
-      Cities.cities_in_country?('US').should be_true
+      expect(Cities.cities_in_country?('US')).to be_truthy
     end
 
     it 'returns false otherwise' do
-      Cities.cities_in_country?('XX').should be_false
+      expect(Cities.cities_in_country?('XX')).to be_falsey
     end
   end
 

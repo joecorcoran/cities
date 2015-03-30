@@ -11,12 +11,12 @@ Gem::Specification.new do |s|
   s.summary     = 'World cities in Ruby'
   s.license     = 'MIT'
   s.description = <<-txt
-Provides data about world cities in Ruby. Data from the Maxmind database. 
+Provides data about world cities in Ruby. Data from the Maxmind database.
 txt
 
   s.add_dependency             'multi_json',  '~> 1.8'
 
-  s.add_development_dependency 'rspec',       '~> 2.14'
+  s.add_development_dependency 'rspec',       '~> 3.2.0'
   s.add_development_dependency 'countries',   '~> 0.9'
   s.add_development_dependency 'rake'
 
