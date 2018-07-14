@@ -47,10 +47,11 @@ Cities.cities_in_country('GB')['buchlyvie'].population
   #=> 448
 ```
 
-## Countries
+## Countries gem intregration
 
-This gem was designed as an extension to the [Countries gem](https://github.com/hexorx/countries). Installing Cities adds two new instance methods to the `Country` class.
+This gem was designed as an extension to the [Countries gem](https://github.com/hexorx/countries). Installing Cities adds two new instance methods to the `Country` class and one instance method to the `State`.
 
+### Country
 ```ruby
 us = Country.search('US')
   #=> #<Country:0x000001020cf5f0>
@@ -60,6 +61,18 @@ us.cities?
 
 us.cities
   #=> { "abanda" => #<Cities::City:0x00000114b34a38>, ...  }
+```
+
+### State
+```ruby
+us = Country.search('US')
+  #=> #<Country:0x000001020cf5f0>
+
+alaska = us.states
+  #=> {"AK"=>  #<struct ISO3166::Subdivision>, ... }
+
+alaska.cities
+  #=> { "adak" => #<Cities::City:0x00000114b34a38>, ...  }
 ```
 
 ## Caching

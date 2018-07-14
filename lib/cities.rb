@@ -2,6 +2,7 @@ require 'multi_json'
 require 'cities/configuration'
 require 'cities/city'
 require 'cities/country'
+require 'cities/subdivision'
 
 module Cities
   class << self
@@ -14,6 +15,18 @@ module Cities
     def cities_in_country(code)
       if self.cities_in_country?(code)
         country_data = load_country_data(code)
+        country_data.reduce({}) do |cities, city_data|
+          cities[city_data.first] = City.new(city_data.last)
+          cities
+        end
+      else
+        {}
+      end
+    end
+
+    def cities_in_state(country, state)
+      if cities_in_country?(country)
+        country_data = load_country_data(country).select { |_, hash| hash['region'] == state }
         country_data.reduce({}) do |cities, city_data|
           cities[city_data.first] = City.new(city_data.last)
           cities
