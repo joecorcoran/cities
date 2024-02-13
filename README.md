@@ -1,6 +1,6 @@
 # Cities
 
-[![Build Status](https://travis-ci.org/joecorcoran/cities.png?branch=master)](https://travis-ci.org/joecorcoran/cities) [![Code Climate](https://codeclimate.com/github/joecorcoran/cities.png)](https://codeclimate.com/github/joecorcoran/cities)
+**This repo is archived – no longer maintained. Please fork if you need it!**
 
 All the cities of the world (according to the periodically updated MaxMind database).
 
